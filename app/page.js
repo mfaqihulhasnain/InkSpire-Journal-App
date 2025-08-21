@@ -55,7 +55,7 @@ export default async function Home() {
               <div className="flex items-center space-x-2">
                 <Calendar className="h-5 w-5 text-orange-600" />
                 <span className="text-orange-900 font-medium">
-                  Today's Entry
+                  Today&apos;s Entry
                 </span>
               </div>
 
