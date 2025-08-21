@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "question": "What is the purpose of this journal app?",
+        "answer": "This journal app helps users record and manage their daily thoughts and experiences."
+    },
+    {
+        "id": 2,
+        "question": "How do I create a new journal entry?",
+        "answer": "Click on the 'New Entry' button and fill out the form to add a new journal entry."
+    },
+    {
+        "id": 3,
+        "question": "Can I edit or delete my entries?",
+        "answer": "Yes, you can edit or delete your entries from the journal list."
+    },
+    {
+        "id": 4,
+        "question": "Is my data private?",
+        "answer": "All your journal entries are private and only accessible to you."
+    },
+    {
+        "id": 5,
+        "question": "How do I reset my password?",
+        "answer": "Go to the settings page and select 'Reset Password' to change your password."
+    }
+]
