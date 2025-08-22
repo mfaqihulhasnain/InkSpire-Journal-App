@@ -6,6 +6,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "sonner";
 import "react-quill-new/dist/quill.snow.css";
 
+export const dynamic = "force-dynamic";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
