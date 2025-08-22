@@ -12,8 +12,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: {
-    default: "InkSpire",
-    template: "%s | InkSpire",
+    default: "InkSpire – Journal your mood and thoughts",
+    template: "%s | InkSpire – Journal your mood and thoughts",
   },
   description: "Journal app for your mood and thoughts.",
   applicationName: "InkSpire",
