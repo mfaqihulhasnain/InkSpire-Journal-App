@@ -13,9 +13,16 @@ export async function getPixabayImage(query) {
     return null;
   }
 }
+
 export const getDailyPrompt = unstable_cache(
   async () => {
     try {
+      // Check if API key exists
+      if (!process.env.API_NINJAS_KEY) {
+        console.warn("API_NINJAS_KEY not found, using fallback prompt");
+        return "What's on your mind today? Write about it in your journal.";
+      }
+
       const res = await fetch("https://api.api-ninjas.com/v1/quotes", {
         method: "GET",
         headers: {
@@ -26,14 +33,21 @@ export const getDailyPrompt = unstable_cache(
 
       if (!res.ok) {
         const text = await res.text();
-        throw new Error(`API error: ${res.status} - ${text}`);
+        console.error(`API error: ${res.status} - ${text}`);
+        return "What's on your mind today? Write about it in your journal.";
       }
 
       const data = await res.json();
+      
+      if (!data || !Array.isArray(data) || data.length === 0) {
+        console.warn("Invalid API response format");
+        return "What's on your mind today? Write about it in your journal.";
+      }
+
       return `${data[0].quote} — ${data[0].author}`;
     } catch (error) {
       console.error("Error fetching daily prompt:", error);
-      return "Whats on your mind today? Write about it in your journal.";
+      return "What's on your mind today? Write about it in your journal.";
     }
   },
   ["daily-prompt"],
